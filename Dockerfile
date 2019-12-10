@@ -1,4 +1,4 @@
-FROM debian:9
+FROM debian:10
 MAINTAINER Florian Mueller <docker@flmue.de>
 
 # Let the container know that there is no tty
@@ -15,9 +15,12 @@ RUN apt-get update \
  gnupg2 \
  wget \
  sudo \
- # node 
+ # sury
+ && curl -s https://packages.sury.org/php/apt.gpg | apt-key add - \
+ && echo "deb https://packages.sury.org/php/ buster main" > /etc/apt/sources.list.d/sury.list \
+ # node
  && curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - \
- && echo "deb https://deb.nodesource.com/node_6.x jessie main" > /etc/apt/sources.list.d/nodesource.list \
+ && echo "deb https://deb.nodesource.com/node_13.x buster main" > /etc/apt/sources.list.d/nodesource.list \
  # yarń
  && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
  && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
@@ -29,18 +32,18 @@ RUN apt-get update \
  unzip \
  rsync \
  git \
- php-cli \
- php-common \
- php-curl \
- php-gd \
- php-mbstring \ 
- php-mysql \
- php-soap \
- php-xml \
- php-xmlrpc \
- php-xsl \
- php-tidy \
- php-zip \
+ php7.4-cli \
+ php7.4-common \
+ php7.4-curl \
+ php7.4-gd \
+ php7.4-mbstring \
+ php7.4-mysql \
+ php7.4-soap \
+ php7.4-xml \
+ php7.4-xmlrpc \
+ php7.4-xsl \
+ php7.4-tidy \
+ php7.4-zip \
  php-imagick \
  php-xdebug \
  nodejs \
