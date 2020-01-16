@@ -44,6 +44,7 @@ RUN apt-get update \
  php7.4-xsl \
  php7.4-tidy \
  php7.4-zip \
+ php-mongodb \
  php-imagick \
  php-xdebug \
  nodejs \
