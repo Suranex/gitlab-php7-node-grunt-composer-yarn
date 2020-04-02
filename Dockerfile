@@ -69,7 +69,7 @@ RUN composer selfupdate
 RUN npm install -g grunt-cli
 RUN grunt --version
 
-# Set the Docker host, because we're assuming we're using docker in docker.
+# Set the Docker host, because we're assuming we're using docker in docker. 
 ENV DOCKER_HOST "tcp://docker:2375"
 
 # Expose Docker socket for Docker-in-Docker
